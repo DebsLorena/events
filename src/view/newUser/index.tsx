@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import './styles.css'
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth"
 import { app } from "../../config/firebase"
+import { Navbar } from "../../components/navbar"
 
 export function NewUser() {
 
@@ -53,24 +54,23 @@ export function NewUser() {
 
 
     return (
-        <div className="form-cadastro">
-            <form className="text-center form-login mx-auto mt-5">
-                <h1 className="h3 mb-3 text-black font-weigth-bold">Cadastro</h1>
-                <input onChange={(e) => setEmail(e.target.value)} type="email" className="form-control my-2" placeholder="Email" ></input>
-                <input onChange={(e) => setSenha(e.target.value)} type="password" className="form-control my-2" placeholder="Senha" ></input>
+        <>
+            <Navbar />
+            <div className="form-cadastro  d-flex align-items-center">
+                <form className="text-center form-login mx-auto mt-5">
+                    <h1 className="h3 mb-3 text-black font-weigth-bold">Cadastro</h1>
+                    <input onChange={(e) => setEmail(e.target.value)} type="email" className="form-control my-2" placeholder="Email" ></input>
+                    <input onChange={(e) => setSenha(e.target.value)} type="password" className="form-control my-2" placeholder="Senha" ></input>
 
-                {loading ? <div className="spinner-border text-secondary" role="status"><span className="sr-only"></span></div>
-                    : <button onClick={cadastrar} className="w-100 btn btn-lg btn-secondary" type="button">Cadastrar</button>
-                }
-
-                <div className="msg-login text-gray text-center my-5">
-                    {msgType === 'sucesso' && <span><strong>WoW! </strong> Usuário cadastrado com sucesso! &#128526;</span>}
-                    {msgType === 'erro' && <span><strong>Ops! </strong> {msg} &#128546;</span>}
-                </div>
-
-
-            </form>
-
-        </div>
+                    {loading ? <div className="spinner-border text-secondary" role="status"><span className="sr-only"></span></div>
+                        : <button onClick={cadastrar} className="w-100 btn btn-lg btn-secondary" type="button">Cadastrar</button>
+                    }
+                    <div className="msg-login text-gray text-center my-5">
+                        {msgType === 'sucesso' && <span><strong>WoW! </strong> Usuário cadastrado com sucesso! &#128526;</span>}
+                        {msgType === 'erro' && <span><strong>Ops! </strong> {msg} &#128546;</span>}
+                    </div>
+                </form>
+            </div>
+        </>
     )
 }

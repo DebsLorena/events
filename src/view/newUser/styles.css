@@ -1,3 +1,12 @@
 .form-login {
     max-width: 650px;
+    width: 400px;
+}
+
+.form-cadastro {
+    width: 100%;
+    padding: 15%;
+    margin: auto;
+    background-color: lightgray;
+    height: 100vh;
 }
