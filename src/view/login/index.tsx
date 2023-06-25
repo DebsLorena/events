@@ -48,7 +48,7 @@ export function Login() {
 				<div className="opcoes-login mt-5 text-center">
 					<a href="#" className="mx-2"> Recuperar Senha</a>
 					<span className="text-white">&#9733;</span>
-					<a href="#" className="mx-2"> Quero Cadastrar</a>
+					<a href="/novo_usuario" className="mx-2"> Quero Cadastrar</a>
 				</div>
 
 			</form>

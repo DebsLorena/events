@@ -1,15 +1,16 @@
-import React from 'react'
-import { Login } from './view/login'
-import { NewUser } from './view/newUser'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Login } from './view/login';
+import { NewUser } from './view/newUser';
 
-
-function App() {
-
-
+export function App() {
   return (
-    // <Login />
-    <NewUser />
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/novo_usuario" element={<NewUser />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
