@@ -5,7 +5,7 @@ import { app } from '../../config/firebase'
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
-interface RootState {
+export interface RootState {
 	usuarioEmail: string;
 	usuarioLogado: number
 }
