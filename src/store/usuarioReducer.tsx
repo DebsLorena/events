@@ -1,6 +1,7 @@
+
 const INITIAL_STATE = {
     usuarioEmail: '',
-    usuarioLoagdo: 0
+    usuarioLogado: 0
 }
 
 interface Action {

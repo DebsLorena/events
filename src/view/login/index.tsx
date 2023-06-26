@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import './styles.css'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from '../../config/firebase'
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
-
+interface RootState {
+	usuarioEmail: string;
+	usuarioLogado: number
+}
 
 export function Login() {
 
 	const [email, setEmail] = useState('')
 	const [senha, setSenha] = useState('')
 	const [msgType, setMsgType] = useState('')
+	const dispatch = useDispatch()
 
 	const auth = getAuth(app);
 
@@ -20,6 +26,11 @@ export function Login() {
 				// Login bem-sucedido, faça o que desejar aqui
 				console.log("Usuário logado:", userCredential.user);
 				setMsgType('sucesso')
+				setTimeout(
+					() => {
+						dispatch({ type: 'LOG_IN', usuarioEmail: email })
+					}, 2000
+				)
 			})
 			.catch((error) => {
 				// Ocorreu um erro durante o login, trate-o aqui
@@ -31,6 +42,7 @@ export function Login() {
 
 	return (
 		<div className="login-content d-flex align-items-center">
+			{useSelector((state: RootState) => state.usuarioLogado) ? <Navigate to='/' /> : null}
 			<form className="form-signin mx-auto">
 				<div className="text-center mb-4">
 					<h1 className="h3 mb-3 fw-normal text-white font-weight-bold">Login</h1>
