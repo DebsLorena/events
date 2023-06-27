@@ -25,7 +25,7 @@ export function Navbar() {
                         </li>
                         {usuarioLogado > 0 ?
                             <>
-                                <li className="nav-item "><Link className="nav-link text-white" aria-current="page" to="/">Publicar Evento</Link></li>
+                                <li className="nav-item "><Link className="nav-link text-white" aria-current="page" to="/criar_evento">Publicar Evento</Link></li>
                                 <li className="nav-item "><Link className="nav-link" aria-current="page" to="/">Meus Eventos</Link></li>
                                 <li className="nav-item "><Link className="nav-link" aria-current="page" onClick={() => dispatch({ type: 'LOT_OUT' })} to="#" >Sair</Link></li>
                             </>

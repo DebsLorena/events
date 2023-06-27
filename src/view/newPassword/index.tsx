@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import './styles.css'
 import { Navbar } from "../../components/navbar"
 import { getAuth, sendPasswordResetEmail } from "firebase/auth"
 import { app } from "../../config/firebase"

@@ -7,6 +7,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import { store } from './store';
 import { Provider } from 'react-redux';
 import { NewPassword } from './view/newPassword';
+import { Event } from './view/event';
 
 export function App() {
   return (
@@ -17,6 +18,7 @@ export function App() {
           <Route path="/novo_usuario" element={<NewUser />} />
           <Route path="/login" element={<Login />} />
           <Route path="/recuperar_senha" element={<NewPassword />} />
+          <Route path="/criar_evento" element={<Event />} />
         </Routes>
       </Router>
     </Provider>
