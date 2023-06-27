@@ -6,15 +6,17 @@ import { Home } from './view/home';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import { store } from './store';
 import { Provider } from 'react-redux';
+import { NewPassword } from './view/newPassword';
 
 export function App() {
   return (
     <Provider store={store}>
       <Router>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/novo_usuario" element={<NewUser />} />
           <Route path="/" element={<Home />} />
+          <Route path="/novo_usuario" element={<NewUser />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/recuperar_senha" element={<NewPassword />} />
         </Routes>
       </Router>
     </Provider>

@@ -3,7 +3,7 @@ import './styles.css'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from '../../config/firebase'
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 export interface RootState {
 	usuarioEmail: string;
@@ -37,7 +37,6 @@ export function Login() {
 				console.log("Erro de login:", error);
 				setMsgType('erro')
 			});
-
 	}
 
 	return (
@@ -58,9 +57,9 @@ export function Login() {
 				</div>
 
 				<div className="opcoes-login mt-5 text-center">
-					<a href="#" className="mx-2"> Recuperar Senha</a>
+					<Link to="/recuperar_senha" className="mx-2"> Recuperar Senha</Link>
 					<span className="text-white">&#9733;</span>
-					<a href="/novo_usuario" className="mx-2"> Quero Cadastrar</a>
+					<Link to="/novo_usuario" className="mx-2"> Quero Cadastrar</Link>
 				</div>
 
 			</form>
